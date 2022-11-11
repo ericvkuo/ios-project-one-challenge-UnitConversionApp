@@ -9,18 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     
+    //saving the values
     @State private var conversionType = "Temperature"
     @State private var inputUnit = ""
     @State private var outputUnit = ""
     @State private var inputNumber = 0.0
     @FocusState private var numberIsFocused: Bool
-    //@State private var
+    
     let conversionLists = ["Temperature", "Length", "Time", "Volume"]
     let temperatureConversions = ["", "Celsius", "Fahrenheit", "Kelvin"]
     let lengthConversions = ["", "centimeters", "meters", "kilometers", "inches", "feet", "miles"]
     let timeConversions = ["", "seconds", "minutes", "hours", "days"]
     let volumeConversions = ["", "mililiters", "liters", "cups", "pints", "gallons"]
     
+    //conversion calculations
     var finalConversion: Double {
         var finalConversion = 0.0
         if conversionType == conversionLists[0] {
